@@ -10,7 +10,7 @@ SCT development version (master:51f9f79ffad0cbdb3b865273faa4aa605fced2df). Next 
 
 Below is an example of a sagittal scan. You notice that the spinal cord is difficult to delineate on the axial view, due to the low resolution in the right-left direction:
 
-<img src="https://github.com/sct-pipeline/lumbar_sagittal_seg/blob/master/imgs/3d_view_original.png" width="600">
+<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/3d_view_original.png" width="600">
 
 The strategy here is to resample the scan to an isotropic resolution, and then segment the cord using manual initialization.
 
@@ -22,11 +22,11 @@ sct_propseg -i T2r.nii.gz -c t2 -init-centerline viewer
 ```
 
 The image below shows how to do the manual initialization. Here, we only label until the lower tip of the spinal cord, which stops at around T12-L1. Below the spinal cord is the cauda equine.
-<img src="https://github.com/sct-pipeline/lumbar_sagittal_seg/blob/master/imgs/manual_labeling.png" width="600">
+<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/manual_labeling.png" width="600">
 
 And here is the resulting cord segmentation:
 
-<img src="https://github.com/sct-pipeline/lumbar_sagittal_seg/blob/master/imgs/seg_overlaid.gif" width="600">
+<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/seg_overlaid.gif" width="600">
 
 If you wish to resample the segmentation at the same resolution of the native image, you can do so using the following command:
 
@@ -37,7 +37,7 @@ sct_register_multimodal -i T2r_seg.nii.gz -d T2.nii.gz -identity 1 -x linear
 
 Note, here we used linear interpolation in order to keep the partial volume information, but you can also output a binary segmentation by replacing `-x linear` by `-x nn`. Here is the output:
 
-<img src="https://github.com/sct-pipeline/lumbar_sagittal_seg/blob/master/imgs/seg_overlaid_resampled.gif" width="600">
+<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/seg_overlaid_resampled.gif" width="600">
 
 
 ## License
