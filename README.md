@@ -3,14 +3,14 @@ This tutorial explains how to segment spinal cords on images with sagittal orien
 
 ## Dependencies
 
-SCT development version (master:51f9f79ffad0cbdb3b865273faa4aa605fced2df). Next stable release: v3.2.1.
+SCT version: v3.2.1.
 
 
 ## Getting started
 
 Below is an example of a sagittal scan. You notice that the spinal cord is difficult to delineate on the axial view, due to the low resolution in the right-left direction:
 
-<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/3d_view_original.png" width="600">
+<img src="https://github.com/sct-pipeline/sagittal_lumbar_seg/blob/master/imgs/3d_view_original_2.png" width="600">
 
 The strategy here is to resample the scan to an isotropic resolution, and then segment the cord using manual initialization.
 
